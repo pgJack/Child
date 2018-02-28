@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- 数据库驱动-->
+	<classPathEntry	location="C:/Users/gdkj/.m2/repository/mysql/mysql-connector-java/5.1.34/mysql-connector-java-5.1.34.jar"/>
+	<context id="DB2Tables"	targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="true"/>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+		<!--数据库链接URL，用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3308/corpus?characterEncoding=utf8" userId="root" password="">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+		
+		<!-- 生成模型的包名和位置-->
+		<javaModelGenerator targetPackage="com.beta.crop.model" targetProject="base_platform/src/main/java">
+			<property name="enableSubPackages" value="true"/>
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+		<!-- 生成映射文件的包名和位置-->
+		<sqlMapGenerator targetPackage="com.beta.crop.mapper" targetProject="base_platform/src/main/java">
+			<property name="enableSubPackages" value="true"/>
+		</sqlMapGenerator>
+		<!-- 生成DAO的包名和位置-->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.beta.crop.dao" targetProject="base_platform/src/main/java">
+			<property name="enableSubPackages" value="true"/>
+		</javaClientGenerator>
+		<!-- 要生成哪些表-->
+		
+		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false"  enableDeleteByExample="false"
+			   enableInsert = "false" enableSelectByPrimaryKey = "true" enableUpdateByPrimaryKey ="false" enableDeleteByPrimaryKey ="false"
+			   tableName="test" domainObjectName="Test"></table>
+
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_audio_record" domainObjectName="AudioRecord"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_auth" domainObjectName="Auth"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_command_result" domainObjectName="CommandResult"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_group" domainObjectName="Group"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_machine" domainObjectName="Machine"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_machine_command" domainObjectName="MachineCommand"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_machine_group" domainObjectName="MachineGroup"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_region" domainObjectName="Region"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_role" domainObjectName="Role"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_role_auth" domainObjectName="RoleAuth"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_user" domainObjectName="User"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_user_machine" domainObjectName="UserMachine"></table> -->
+<!-- 		<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_user_role" domainObjectName="UserRole"></table> -->
+<!-- 				<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_commands" domainObjectName="Commands"></table> -->
+<!-- 	<table enableUpdateByExample ="false" enableCountByExample ="false" selectByExampleQueryId="false" enableSelectByExample="false" enableDeleteByExample="false" tableName="robot_platform_region" domainObjectName="Region"></table> -->
+		</context>
+</generatorConfiguration>
