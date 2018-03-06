@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F077DBB204926810006A112 /* NHData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F077DBA204926810006A112 /* NHData.swift */; };
+		4F077DBD20492D560006A112 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F077DBC20492D560006A112 /* SwiftyJSON.swift */; };
+		4F077DC020494E2C0006A112 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F077DBF20494E2C0006A112 /* Array+Extension.swift */; };
+		4F2783AA20465EE10032187D /* NHLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2783A920465EE10032187D /* NHLocationManager.swift */; };
+		4F2783AC20465EF60032187D /* NHNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2783AB20465EF60032187D /* NHNet.swift */; };
+		4F2783B52046A3C00032187D /* NHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2783B42046A3C00032187D /* NHAlertView.swift */; };
 		4F2CA887203FEF1B001CE74A /* Child.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CA885203FEF1B001CE74A /* Child.xcdatamodeld */; };
 		4F2CA897203FEF1B001CE74A /* ChildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CA896203FEF1B001CE74A /* ChildTests.swift */; };
 		4F2CA8A2203FEF1B001CE74A /* ChildUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CA8A1203FEF1B001CE74A /* ChildUITests.swift */; };
+		4F4CF460204D14B1000F1FDF /* NHDropDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4CF45F204D14B1000F1FDF /* NHDropDownModel.swift */; };
+		4F4CF462204D16FB000F1FDF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4CF461204D16FB000F1FDF /* Default-568h@2x.png */; };
+		4F4CF466204D1A03000F1FDF /* NHDropDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4CF465204D1A03000F1FDF /* NHDropDownDelegate.swift */; };
 		4F541DFC2045496200694486 /* NHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F541DEF2045496100694486 /* NHTabBarController.swift */; };
 		4F541DFD2045496200694486 /* NHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F541DF02045496100694486 /* NHNavigationController.swift */; };
 		4F541DFE2045496200694486 /* NHTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F541DF12045496100694486 /* NHTableViewController.swift */; };
@@ -21,9 +30,12 @@
 		4FBEBEE420412D280014FB25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBEBEDD20412D280014FB25 /* LaunchScreen.storyboard */; };
 		4FBEBEE520412D280014FB25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBEBEDE20412D280014FB25 /* Assets.xcassets */; };
 		4FBEBEE620412D280014FB25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBEDF20412D280014FB25 /* AppDelegate.swift */; };
-		4FBEBEE720412D280014FB25 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBEBEE020412D280014FB25 /* Info.plist */; };
 		4FBEBEF22041311B0014FB25 /* NHTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBEF12041311B0014FB25 /* NHTheme.swift */; };
 		4FBEBEF4204132820014FB25 /* NHConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBEF3204132820014FB25 /* NHConst.swift */; };
+		4FCBA825204B180F00A7772A /* NHPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBA824204B180F00A7772A /* NHPath.swift */; };
+		4FF121B2204E2FF200CA3B9E /* DropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF121B1204E2FF200CA3B9E /* DropTableView.swift */; };
+		4FF121B4204E334B00CA3B9E /* DropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF121B3204E334B00CA3B9E /* DropCell.swift */; };
+		4FF121B6204E9DE800CA3B9E /* DropProvinceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF121B5204E9DE800CA3B9E /* DropProvinceController.swift */; };
 		542B512A769D4521A0C4F2EA /* Pods_Child.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD4191833A61B0C6B4B87AA /* Pods_Child.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +59,14 @@
 /* Begin PBXFileReference section */
 		0FD4191833A61B0C6B4B87AA /* Pods_Child.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Child.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		344BEF3FE604CD5C6D632BBE /* Pods-Child.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Child.release.xcconfig"; path = "Pods/Target Support Files/Pods-Child/Pods-Child.release.xcconfig"; sourceTree = "<group>"; };
+		4F077DBA204926810006A112 /* NHData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHData.swift; sourceTree = "<group>"; };
+		4F077DBC20492D560006A112 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		4F077DBF20494E2C0006A112 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		4F2783A920465EE10032187D /* NHLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLocationManager.swift; sourceTree = "<group>"; };
+		4F2783AB20465EF60032187D /* NHNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHNet.swift; sourceTree = "<group>"; };
+		4F2783AD204672FA0032187D /* Child-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Child-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F2783B12046755C0032187D /* Child.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Child.entitlements; sourceTree = "<group>"; };
+		4F2783B42046A3C00032187D /* NHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHAlertView.swift; sourceTree = "<group>"; };
 		4F2CA87B203FEF1B001CE74A /* Child.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Child.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2CA886203FEF1B001CE74A /* Child.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Child.xcdatamodel; sourceTree = "<group>"; };
 		4F2CA892203FEF1B001CE74A /* ChildTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChildTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +75,9 @@
 		4F2CA89D203FEF1B001CE74A /* ChildUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChildUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2CA8A1203FEF1B001CE74A /* ChildUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildUITests.swift; sourceTree = "<group>"; };
 		4F2CA8A3203FEF1B001CE74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F4CF45F204D14B1000F1FDF /* NHDropDownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHDropDownModel.swift; sourceTree = "<group>"; };
+		4F4CF461204D16FB000F1FDF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4F4CF465204D1A03000F1FDF /* NHDropDownDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHDropDownDelegate.swift; sourceTree = "<group>"; };
 		4F541DEF2045496100694486 /* NHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHTabBarController.swift; sourceTree = "<group>"; };
 		4F541DF02045496100694486 /* NHNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHNavigationController.swift; sourceTree = "<group>"; };
 		4F541DF12045496100694486 /* NHTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHTableViewController.swift; sourceTree = "<group>"; };
@@ -67,9 +90,12 @@
 		4FBEBEDD20412D280014FB25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FBEBEDE20412D280014FB25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FBEBEDF20412D280014FB25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4FBEBEE020412D280014FB25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FBEBEF12041311B0014FB25 /* NHTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHTheme.swift; sourceTree = "<group>"; };
 		4FBEBEF3204132820014FB25 /* NHConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHConst.swift; sourceTree = "<group>"; };
+		4FCBA824204B180F00A7772A /* NHPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHPath.swift; sourceTree = "<group>"; };
+		4FF121B1204E2FF200CA3B9E /* DropTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropTableView.swift; sourceTree = "<group>"; };
+		4FF121B3204E334B00CA3B9E /* DropCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropCell.swift; sourceTree = "<group>"; };
+		4FF121B5204E9DE800CA3B9E /* DropProvinceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropProvinceController.swift; sourceTree = "<group>"; };
 		E8F0E99E266D517F30BE4B99 /* Pods-Child.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Child.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Child/Pods-Child.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,9 +125,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F077DBE20494DF70006A112 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4F077DBF20494E2C0006A112 /* Array+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		4F2CA872203FEF1B001CE74A = {
 			isa = PBXGroup;
 			children = (
+				4F4CF461204D16FB000F1FDF /* Default-568h@2x.png */,
 				4F2CA87D203FEF1B001CE74A /* Child */,
 				4F2CA895203FEF1B001CE74A /* ChildTests */,
 				4F2CA8A0203FEF1B001CE74A /* ChildUITests */,
@@ -124,6 +159,7 @@
 		4F2CA87D203FEF1B001CE74A /* Child */ = {
 			isa = PBXGroup;
 			children = (
+				4F2783B12046755C0032187D /* Child.entitlements */,
 				4F541E02204549CD00694486 /* Tools */,
 				4F541DF62045496100694486 /* Func */,
 				4F541DED2045496100694486 /* Root */,
@@ -212,6 +248,7 @@
 		4F541DF82045496100694486 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F4CF45F204D14B1000F1FDF /* NHDropDownModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				4F541DFA2045496100694486 /* NHHomePageController.swift */,
+				4FF121B5204E9DE800CA3B9E /* DropProvinceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,8 +265,11 @@
 		4F541DFB2045496100694486 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F4CF465204D1A03000F1FDF /* NHDropDownDelegate.swift */,
 				4F541E1420455B1000694486 /* DropDownViews.swift */,
 				4F541E1320455B1000694486 /* DropDownViews.xib */,
+				4FF121B1204E2FF200CA3B9E /* DropTableView.swift */,
+				4FF121B3204E334B00CA3B9E /* DropCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +277,12 @@
 		4F541E02204549CD00694486 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4F077DBE20494DF70006A112 /* Extension */,
+				4F077DBC20492D560006A112 /* SwiftyJSON.swift */,
+				4F2783A920465EE10032187D /* NHLocationManager.swift */,
+				4F2783AB20465EF60032187D /* NHNet.swift */,
+				4F2783B42046A3C00032187D /* NHAlertView.swift */,
+				4F077DBA204926810006A112 /* NHData.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -339,7 +386,7 @@
 				4FBEBEDF20412D280014FB25 /* AppDelegate.swift */,
 				4FBEBEDD20412D280014FB25 /* LaunchScreen.storyboard */,
 				4FBEBEDE20412D280014FB25 /* Assets.xcassets */,
-				4FBEBEE020412D280014FB25 /* Info.plist */,
+				4F2783AD204672FA0032187D /* Child-Bridging-Header.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -349,6 +396,7 @@
 			children = (
 				4FBEBEF12041311B0014FB25 /* NHTheme.swift */,
 				4FBEBEF3204132820014FB25 /* NHConst.swift */,
+				4FCBA824204B180F00A7772A /* NHPath.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -442,7 +490,19 @@
 				TargetAttributes = {
 					4F2CA87A203FEF1B001CE74A = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					4F2CA891203FEF1B001CE74A = {
 						CreatedOnToolsVersion = 9.1;
@@ -484,7 +544,7 @@
 				4FBEBEE520412D280014FB25 /* Assets.xcassets in Resources */,
 				4F541E1520455B1000694486 /* DropDownViews.xib in Resources */,
 				4FBEBEE420412D280014FB25 /* LaunchScreen.storyboard in Resources */,
-				4FBEBEE720412D280014FB25 /* Info.plist in Resources */,
+				4F4CF462204D16FB000F1FDF /* Default-568h@2x.png in Resources */,
 				4F541E002045496200694486 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,16 +629,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCBA825204B180F00A7772A /* NHPath.swift in Sources */,
+				4F2783AA20465EE10032187D /* NHLocationManager.swift in Sources */,
+				4FF121B2204E2FF200CA3B9E /* DropTableView.swift in Sources */,
+				4FF121B4204E334B00CA3B9E /* DropCell.swift in Sources */,
 				4F541DFC2045496200694486 /* NHTabBarController.swift in Sources */,
 				4FBEBEE620412D280014FB25 /* AppDelegate.swift in Sources */,
+				4F077DBD20492D560006A112 /* SwiftyJSON.swift in Sources */,
+				4F077DBB204926810006A112 /* NHData.swift in Sources */,
 				4FBEBEF22041311B0014FB25 /* NHTheme.swift in Sources */,
 				4F541DFD2045496200694486 /* NHNavigationController.swift in Sources */,
+				4F077DC020494E2C0006A112 /* Array+Extension.swift in Sources */,
 				4FBEBEF4204132820014FB25 /* NHConst.swift in Sources */,
 				4F541E1620455B1000694486 /* DropDownViews.swift in Sources */,
 				4F2CA887203FEF1B001CE74A /* Child.xcdatamodeld in Sources */,
+				4FF121B6204E9DE800CA3B9E /* DropProvinceController.swift in Sources */,
 				4F541DFF2045496200694486 /* NHViewController.swift in Sources */,
+				4F2783B52046A3C00032187D /* NHAlertView.swift in Sources */,
+				4F4CF460204D14B1000F1FDF /* NHDropDownModel.swift in Sources */,
+				4F4CF466204D1A03000F1FDF /* NHDropDownDelegate.swift in Sources */,
 				4F541E012045496200694486 /* NHHomePageController.swift in Sources */,
 				4F541DFE2045496200694486 /* NHTableViewController.swift in Sources */,
+				4F2783AC20465EF60032187D /* NHNet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +798,8 @@
 			baseConfigurationReference = E8F0E99E266D517F30BE4B99 /* Pods-Child.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Child/Child.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK49PA345D;
 				INFOPLIST_FILE = "$(SRCROOT)/Child/Main/Info.plist";
@@ -733,6 +807,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Noah.Smart.Child;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Child/Main/Child-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -743,6 +819,8 @@
 			baseConfigurationReference = 344BEF3FE604CD5C6D632BBE /* Pods-Child.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Child/Child.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK49PA345D;
 				INFOPLIST_FILE = "$(SRCROOT)/Child/Main/Info.plist";
@@ -750,6 +828,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Noah.Smart.Child;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Child/Main/Child-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

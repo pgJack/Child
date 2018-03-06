@@ -49,6 +49,9 @@ struct NHColor {
     static let whiteColor = HexRGBColor(0xffffff)   //白色
     static let redColor = HexRGBColor(0xff1212)     //醒目红色
     
+    //background
+    static let backlightColor = HexRGBColor(0xf8f8f8)
+    
     //Button
     static let buttonNormalColor = mainColor              //按钮颜色
     static let buttonHighColor = HexRGBColor(0x1396A0)    //高亮颜色

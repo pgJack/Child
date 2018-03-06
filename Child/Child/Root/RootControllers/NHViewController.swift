@@ -12,10 +12,6 @@ class NHViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(kSCREEN_WIDTH)
-        print(kSCREEN_HEIGHT)
-        print(IS_IPHONE_X)
         // Do any additional setup after loading the view.
     }
 
