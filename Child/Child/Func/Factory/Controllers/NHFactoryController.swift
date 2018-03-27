@@ -1,23 +1,19 @@
 //
-//  DropProvinceController.swift
+//  NHFactoryController.swift
 //  Child
 //
-//  Created by Noah on 2018/3/6.
+//  Created by Noah on 2018/3/8.
 //  Copyright © 2018年 NH. All rights reserved.
 //
 
 import UIKit
-public protocol NHProvinceDelegate: class {
-    func didSelectProvince(model:CellElement)
-}
 
-class DropProvinceController: NHTableViewController {
+class NHFactoryController: NHTableViewController {
 
-    open weak var proDelegate: NHProvinceDelegate?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "基地"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,29 +30,23 @@ class DropProvinceController: NHTableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return AreaManager.share.provinces?.count ?? 0
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let province = AreaManager.share.provinces![indexPath.row]
-        let element = CellElement(province.0, code: Int(province.1), parentCode: Int(province.2)!, isSelected: false)
-        if IsEquelString(province.code, AreaManager.share.nowProvinceCode()) {
-            element.isSelected = true
-        }
-        return DropCell.getCell(tableView, element)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell:DropCell = tableView.cellForRow(at: indexPath) as! DropCell
-        proDelegate?.didSelectProvince(model: cell.model)
-        
-        navigationController?.popViewController(animated: true)
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

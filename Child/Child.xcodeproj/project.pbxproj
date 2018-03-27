@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F077DBB204926810006A112 /* NHData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F077DBA204926810006A112 /* NHData.swift */; };
-		4F077DBD20492D560006A112 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F077DBC20492D560006A112 /* SwiftyJSON.swift */; };
 		4F077DC020494E2C0006A112 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F077DBF20494E2C0006A112 /* Array+Extension.swift */; };
 		4F2783AA20465EE10032187D /* NHLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2783A920465EE10032187D /* NHLocationManager.swift */; };
 		4F2783AC20465EF60032187D /* NHNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2783AB20465EF60032187D /* NHNet.swift */; };
@@ -27,15 +26,44 @@
 		4F541E012045496200694486 /* NHHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F541DFA2045496100694486 /* NHHomePageController.swift */; };
 		4F541E1520455B1000694486 /* DropDownViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F541E1320455B1000694486 /* DropDownViews.xib */; };
 		4F541E1620455B1000694486 /* DropDownViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F541E1420455B1000694486 /* DropDownViews.swift */; };
+		4F5DFB8C204FE20200BEDE9A /* NHKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DFB8B204FE20200BEDE9A /* NHKeyChain.swift */; };
+		4F6295A32064BE25006F2724 /* LMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6295A22064BE25006F2724 /* LMessage.swift */; };
+		4F6B56412068F1C8002269AC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B56402068F1C7002269AC /* Reachability.swift */; };
+		4F7EA72B206392D60054C678 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA725206392D60054C678 /* yudpsocket.c */; };
+		4F7EA72C206392D60054C678 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA726206392D60054C678 /* ytcpsocket.c */; };
+		4F7EA72D206392D60054C678 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA727206392D60054C678 /* TCPClient.swift */; };
+		4F7EA72E206392D60054C678 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA728206392D60054C678 /* Result.swift */; };
+		4F7EA72F206392D60054C678 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA729206392D60054C678 /* UDPClient.swift */; };
+		4F7EA730206392D60054C678 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA72A206392D60054C678 /* Socket.swift */; };
+		4F7EA7352063A8680054C678 /* LinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA7342063A8680054C678 /* LinkManager.swift */; };
+		4F7EA7372063AB470054C678 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EA7362063AB460054C678 /* SwiftyJSON.swift */; };
+		4F94FE1F205650ED00F030B5 /* NHVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94FE1E205650ED00F030B5 /* NHVersion.swift */; };
+		4FAE20C620503B4E004F6351 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE20C320503B4E004F6351 /* KeychainSwift.swift */; };
+		4FAE20C720503B4E004F6351 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE20C420503B4E004F6351 /* TegKeychainConstants.swift */; };
+		4FAE20C820503B4E004F6351 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE20C520503B4E004F6351 /* KeychainSwiftAccessOptions.swift */; };
 		4FBEBEE420412D280014FB25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBEBEDD20412D280014FB25 /* LaunchScreen.storyboard */; };
 		4FBEBEE520412D280014FB25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBEBEDE20412D280014FB25 /* Assets.xcassets */; };
 		4FBEBEE620412D280014FB25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBEDF20412D280014FB25 /* AppDelegate.swift */; };
 		4FBEBEF22041311B0014FB25 /* NHTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBEF12041311B0014FB25 /* NHTheme.swift */; };
 		4FBEBEF4204132820014FB25 /* NHConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBEF3204132820014FB25 /* NHConst.swift */; };
 		4FCBA825204B180F00A7772A /* NHPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBA824204B180F00A7772A /* NHPath.swift */; };
+		4FD8A59C205526C10056D2BD /* NHDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8A59B205526C10056D2BD /* NHDatabase.swift */; };
+		4FDA3A45206A3A1B009D5665 /* NHChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA3A44206A3A1B009D5665 /* NHChat.swift */; };
+		4FDA3A48206A3EB5009D5665 /* NHChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA3A46206A3EB5009D5665 /* NHChatCell.swift */; };
+		4FDA3A49206A3EB5009D5665 /* NHChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDA3A47206A3EB5009D5665 /* NHChatCell.xib */; };
+		4FDA3A4B206A4768009D5665 /* NHChatDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA3A4A206A4768009D5665 /* NHChatDetailController.swift */; };
+		4FDA3A4D206A538C009D5665 /* NHDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA3A4C206A538C009D5665 /* NHDate.swift */; };
 		4FF121B2204E2FF200CA3B9E /* DropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF121B1204E2FF200CA3B9E /* DropTableView.swift */; };
 		4FF121B4204E334B00CA3B9E /* DropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF121B3204E334B00CA3B9E /* DropCell.swift */; };
 		4FF121B6204E9DE800CA3B9E /* DropProvinceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF121B5204E9DE800CA3B9E /* DropProvinceController.swift */; };
+		4FF75AD22050CA460038DF72 /* NHLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75AD02050CA460038DF72 /* NHLoginController.swift */; };
+		4FF75AD62050E3B40038DF72 /* NHLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75AD42050E3B40038DF72 /* NHLoginCell.swift */; };
+		4FF75AD72050E3B40038DF72 /* NHLoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF75AD52050E3B40038DF72 /* NHLoginCell.xib */; };
+		4FF75AD92050E5780038DF72 /* NHLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75AD82050E5780038DF72 /* NHLoginModel.swift */; };
+		4FF75ADB2050FC500038DF72 /* NHRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75ADA2050FC500038DF72 /* NHRegex.swift */; };
+		4FF75ADD205108B90038DF72 /* NHSelfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75ADC205108B90038DF72 /* NHSelfController.swift */; };
+		4FF75ADF20514ACF0038DF72 /* NHFactoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75ADE20514ACF0038DF72 /* NHFactoryController.swift */; };
+		4FF75AE120514AF00038DF72 /* NHChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF75AE020514AF00038DF72 /* NHChatController.swift */; };
 		542B512A769D4521A0C4F2EA /* Pods_Child.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD4191833A61B0C6B4B87AA /* Pods_Child.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +88,6 @@
 		0FD4191833A61B0C6B4B87AA /* Pods_Child.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Child.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		344BEF3FE604CD5C6D632BBE /* Pods-Child.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Child.release.xcconfig"; path = "Pods/Target Support Files/Pods-Child/Pods-Child.release.xcconfig"; sourceTree = "<group>"; };
 		4F077DBA204926810006A112 /* NHData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHData.swift; sourceTree = "<group>"; };
-		4F077DBC20492D560006A112 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4F077DBF20494E2C0006A112 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4F2783A920465EE10032187D /* NHLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLocationManager.swift; sourceTree = "<group>"; };
 		4F2783AB20465EF60032187D /* NHNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHNet.swift; sourceTree = "<group>"; };
@@ -87,15 +114,44 @@
 		4F541E1220454E6A00694486 /* YNDropDownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YNDropDownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F541E1320455B1000694486 /* DropDownViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownViews.xib; sourceTree = "<group>"; };
 		4F541E1420455B1000694486 /* DropDownViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownViews.swift; sourceTree = "<group>"; };
+		4F5DFB8B204FE20200BEDE9A /* NHKeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHKeyChain.swift; sourceTree = "<group>"; };
+		4F6295A22064BE25006F2724 /* LMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessage.swift; sourceTree = "<group>"; };
+		4F6B56402068F1C7002269AC /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4F7EA725206392D60054C678 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		4F7EA726206392D60054C678 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		4F7EA727206392D60054C678 /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
+		4F7EA728206392D60054C678 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4F7EA729206392D60054C678 /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		4F7EA72A206392D60054C678 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		4F7EA7342063A8680054C678 /* LinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkManager.swift; sourceTree = "<group>"; };
+		4F7EA7362063AB460054C678 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		4F94FE1E205650ED00F030B5 /* NHVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHVersion.swift; sourceTree = "<group>"; };
+		4FAE20C320503B4E004F6351 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		4FAE20C420503B4E004F6351 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
+		4FAE20C520503B4E004F6351 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		4FBEBEDD20412D280014FB25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FBEBEDE20412D280014FB25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FBEBEDF20412D280014FB25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FBEBEF12041311B0014FB25 /* NHTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHTheme.swift; sourceTree = "<group>"; };
 		4FBEBEF3204132820014FB25 /* NHConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHConst.swift; sourceTree = "<group>"; };
 		4FCBA824204B180F00A7772A /* NHPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHPath.swift; sourceTree = "<group>"; };
+		4FD8A59B205526C10056D2BD /* NHDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHDatabase.swift; sourceTree = "<group>"; };
+		4FDA3A44206A3A1B009D5665 /* NHChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHChat.swift; sourceTree = "<group>"; };
+		4FDA3A46206A3EB5009D5665 /* NHChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHChatCell.swift; sourceTree = "<group>"; };
+		4FDA3A47206A3EB5009D5665 /* NHChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NHChatCell.xib; sourceTree = "<group>"; };
+		4FDA3A4A206A4768009D5665 /* NHChatDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHChatDetailController.swift; sourceTree = "<group>"; };
+		4FDA3A4C206A538C009D5665 /* NHDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHDate.swift; sourceTree = "<group>"; };
 		4FF121B1204E2FF200CA3B9E /* DropTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropTableView.swift; sourceTree = "<group>"; };
 		4FF121B3204E334B00CA3B9E /* DropCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropCell.swift; sourceTree = "<group>"; };
 		4FF121B5204E9DE800CA3B9E /* DropProvinceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropProvinceController.swift; sourceTree = "<group>"; };
+		4FF75AD02050CA460038DF72 /* NHLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLoginController.swift; sourceTree = "<group>"; };
+		4FF75AD42050E3B40038DF72 /* NHLoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLoginCell.swift; sourceTree = "<group>"; };
+		4FF75AD52050E3B40038DF72 /* NHLoginCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NHLoginCell.xib; sourceTree = "<group>"; };
+		4FF75AD82050E5780038DF72 /* NHLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLoginModel.swift; sourceTree = "<group>"; };
+		4FF75ADA2050FC500038DF72 /* NHRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHRegex.swift; sourceTree = "<group>"; };
+		4FF75ADC205108B90038DF72 /* NHSelfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHSelfController.swift; sourceTree = "<group>"; };
+		4FF75ADE20514ACF0038DF72 /* NHFactoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHFactoryController.swift; sourceTree = "<group>"; };
+		4FF75AE020514AF00038DF72 /* NHChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHChatController.swift; sourceTree = "<group>"; };
 		E8F0E99E266D517F30BE4B99 /* Pods-Child.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Child.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Child/Pods-Child.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,11 +216,13 @@
 			isa = PBXGroup;
 			children = (
 				4F2783B12046755C0032187D /* Child.entitlements */,
+				4F5DFB83204FCFF900BEDE9A /* Login */,
 				4F541E02204549CD00694486 /* Tools */,
 				4F541DF62045496100694486 /* Func */,
 				4F541DED2045496100694486 /* Root */,
 				4FBEBEE320412D280014FB25 /* Common */,
 				4FBEBEDC20412D280014FB25 /* Main */,
+				4F3135A1205E3A0500E07C8D /* IM */,
 				4F2CA885203FEF1B001CE74A /* Child.xcdatamodeld */,
 			);
 			path = Child;
@@ -186,6 +244,47 @@
 				4F2CA8A3203FEF1B001CE74A /* Info.plist */,
 			);
 			path = ChildUITests;
+			sourceTree = "<group>";
+		};
+		4F3135A1205E3A0500E07C8D /* IM */ = {
+			isa = PBXGroup;
+			children = (
+				4F3135A5205E3B0400E07C8D /* Manager */,
+				4F3135A2205E3A0500E07C8D /* Models */,
+				4F3135A3205E3A0500E07C8D /* Controllers */,
+				4F3135A4205E3A0500E07C8D /* Views */,
+			);
+			path = IM;
+			sourceTree = "<group>";
+		};
+		4F3135A2205E3A0500E07C8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F3135A3205E3A0500E07C8D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4F3135A4205E3A0500E07C8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F3135A5205E3B0400E07C8D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4F7EA724206392D60054C678 /* Socket */,
+				4F7EA7342063A8680054C678 /* LinkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		4F541DED2045496100694486 /* Root */ = {
@@ -277,12 +376,19 @@
 		4F541E02204549CD00694486 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4FAE20C220503B4E004F6351 /* KeyChain */,
 				4F077DBE20494DF70006A112 /* Extension */,
-				4F077DBC20492D560006A112 /* SwiftyJSON.swift */,
+				4F7EA7362063AB460054C678 /* SwiftyJSON.swift */,
 				4F2783A920465EE10032187D /* NHLocationManager.swift */,
 				4F2783AB20465EF60032187D /* NHNet.swift */,
+				4F6B56402068F1C7002269AC /* Reachability.swift */,
 				4F2783B42046A3C00032187D /* NHAlertView.swift */,
 				4F077DBA204926810006A112 /* NHData.swift */,
+				4F5DFB8B204FE20200BEDE9A /* NHKeyChain.swift */,
+				4FF75ADA2050FC500038DF72 /* NHRegex.swift */,
+				4FD8A59B205526C10056D2BD /* NHDatabase.swift */,
+				4F94FE1E205650ED00F030B5 /* NHVersion.swift */,
+				4FDA3A4C206A538C009D5665 /* NHDate.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -300,6 +406,8 @@
 		4F541E1820455C5200694486 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4FDA3A44206A3A1B009D5665 /* NHChat.swift */,
+				4F6295A22064BE25006F2724 /* LMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +415,8 @@
 		4F541E1920455C5200694486 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4FF75AE020514AF00038DF72 /* NHChatController.swift */,
+				4FDA3A4A206A4768009D5665 /* NHChatDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -314,6 +424,8 @@
 		4F541E1A20455C5200694486 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4FDA3A46206A3EB5009D5665 /* NHChatCell.swift */,
+				4FDA3A47206A3EB5009D5665 /* NHChatCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +450,7 @@
 		4F541E1D20455C5200694486 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4FF75ADC205108B90038DF72 /* NHSelfController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -369,6 +482,7 @@
 		4F541E2120455C5200694486 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4FF75ADE20514ACF0038DF72 /* NHFactoryController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -378,6 +492,64 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4F5DFB83204FCFF900BEDE9A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4F5DFB84204FCFF900BEDE9A /* Models */,
+				4F5DFB85204FCFF900BEDE9A /* Controllers */,
+				4F5DFB86204FCFF900BEDE9A /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4F5DFB84204FCFF900BEDE9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FF75AD82050E5780038DF72 /* NHLoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F5DFB85204FCFF900BEDE9A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FF75AD02050CA460038DF72 /* NHLoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4F5DFB86204FCFF900BEDE9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FF75AD42050E3B40038DF72 /* NHLoginCell.swift */,
+				4FF75AD52050E3B40038DF72 /* NHLoginCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F7EA724206392D60054C678 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				4F7EA725206392D60054C678 /* yudpsocket.c */,
+				4F7EA726206392D60054C678 /* ytcpsocket.c */,
+				4F7EA727206392D60054C678 /* TCPClient.swift */,
+				4F7EA729206392D60054C678 /* UDPClient.swift */,
+				4F7EA728206392D60054C678 /* Result.swift */,
+				4F7EA72A206392D60054C678 /* Socket.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		4FAE20C220503B4E004F6351 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				4FAE20C320503B4E004F6351 /* KeychainSwift.swift */,
+				4FAE20C420503B4E004F6351 /* TegKeychainConstants.swift */,
+				4FAE20C520503B4E004F6351 /* KeychainSwiftAccessOptions.swift */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 		4FBEBEDC20412D280014FB25 /* Main */ = {
@@ -496,6 +668,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
@@ -544,7 +719,9 @@
 				4FBEBEE520412D280014FB25 /* Assets.xcassets in Resources */,
 				4F541E1520455B1000694486 /* DropDownViews.xib in Resources */,
 				4FBEBEE420412D280014FB25 /* LaunchScreen.storyboard in Resources */,
+				4FF75AD72050E3B40038DF72 /* NHLoginCell.xib in Resources */,
 				4F4CF462204D16FB000F1FDF /* Default-568h@2x.png in Resources */,
+				4FDA3A49206A3EB5009D5665 /* NHChatCell.xib in Resources */,
 				4F541E002045496200694486 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,11 +787,21 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Child/Pods-Child-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TimedSilver/TimedSilver.framework",
 				"${BUILT_PRODUCTS_DIR}/YNDropDownMenu/YNDropDownMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TimedSilver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YNDropDownMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,27 +816,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FAE20C620503B4E004F6351 /* KeychainSwift.swift in Sources */,
 				4FCBA825204B180F00A7772A /* NHPath.swift in Sources */,
 				4F2783AA20465EE10032187D /* NHLocationManager.swift in Sources */,
+				4F7EA7352063A8680054C678 /* LinkManager.swift in Sources */,
+				4FF75ADD205108B90038DF72 /* NHSelfController.swift in Sources */,
 				4FF121B2204E2FF200CA3B9E /* DropTableView.swift in Sources */,
+				4F7EA730206392D60054C678 /* Socket.swift in Sources */,
 				4FF121B4204E334B00CA3B9E /* DropCell.swift in Sources */,
+				4FF75ADF20514ACF0038DF72 /* NHFactoryController.swift in Sources */,
 				4F541DFC2045496200694486 /* NHTabBarController.swift in Sources */,
 				4FBEBEE620412D280014FB25 /* AppDelegate.swift in Sources */,
-				4F077DBD20492D560006A112 /* SwiftyJSON.swift in Sources */,
+				4FDA3A4D206A538C009D5665 /* NHDate.swift in Sources */,
+				4F94FE1F205650ED00F030B5 /* NHVersion.swift in Sources */,
+				4F7EA72F206392D60054C678 /* UDPClient.swift in Sources */,
+				4FF75AD22050CA460038DF72 /* NHLoginController.swift in Sources */,
+				4FF75AD92050E5780038DF72 /* NHLoginModel.swift in Sources */,
+				4FF75AE120514AF00038DF72 /* NHChatController.swift in Sources */,
 				4F077DBB204926810006A112 /* NHData.swift in Sources */,
+				4FDA3A48206A3EB5009D5665 /* NHChatCell.swift in Sources */,
+				4FDA3A4B206A4768009D5665 /* NHChatDetailController.swift in Sources */,
 				4FBEBEF22041311B0014FB25 /* NHTheme.swift in Sources */,
+				4F6B56412068F1C8002269AC /* Reachability.swift in Sources */,
 				4F541DFD2045496200694486 /* NHNavigationController.swift in Sources */,
 				4F077DC020494E2C0006A112 /* Array+Extension.swift in Sources */,
 				4FBEBEF4204132820014FB25 /* NHConst.swift in Sources */,
+				4FF75ADB2050FC500038DF72 /* NHRegex.swift in Sources */,
 				4F541E1620455B1000694486 /* DropDownViews.swift in Sources */,
+				4FD8A59C205526C10056D2BD /* NHDatabase.swift in Sources */,
+				4F7EA72C206392D60054C678 /* ytcpsocket.c in Sources */,
 				4F2CA887203FEF1B001CE74A /* Child.xcdatamodeld in Sources */,
+				4FAE20C720503B4E004F6351 /* TegKeychainConstants.swift in Sources */,
 				4FF121B6204E9DE800CA3B9E /* DropProvinceController.swift in Sources */,
+				4F6295A32064BE25006F2724 /* LMessage.swift in Sources */,
 				4F541DFF2045496200694486 /* NHViewController.swift in Sources */,
+				4F7EA72E206392D60054C678 /* Result.swift in Sources */,
+				4FDA3A45206A3A1B009D5665 /* NHChat.swift in Sources */,
 				4F2783B52046A3C00032187D /* NHAlertView.swift in Sources */,
 				4F4CF460204D14B1000F1FDF /* NHDropDownModel.swift in Sources */,
 				4F4CF466204D1A03000F1FDF /* NHDropDownDelegate.swift in Sources */,
+				4F7EA7372063AB470054C678 /* SwiftyJSON.swift in Sources */,
+				4FAE20C820503B4E004F6351 /* KeychainSwiftAccessOptions.swift in Sources */,
+				4FF75AD62050E3B40038DF72 /* NHLoginCell.swift in Sources */,
 				4F541E012045496200694486 /* NHHomePageController.swift in Sources */,
+				4F7EA72B206392D60054C678 /* yudpsocket.c in Sources */,
+				4F5DFB8C204FE20200BEDE9A /* NHKeyChain.swift in Sources */,
 				4F541DFE2045496200694486 /* NHTableViewController.swift in Sources */,
+				4F7EA72D206392D60054C678 /* TCPClient.swift in Sources */,
 				4F2783AC20465EF60032187D /* NHNet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

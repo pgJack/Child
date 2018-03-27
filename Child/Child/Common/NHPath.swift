@@ -8,6 +8,11 @@
 
 import Foundation
 
+// 存储
+func SystemPreferences() -> UserDefaults {
+    return UserDefaults.standard
+}
+
 //路径
 let Default_FileManager: FileManager = FileManager.default
 
@@ -16,7 +21,7 @@ let DocPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirector
 func getDocDirectory(_ path:String, _ isCreat:Bool = true) -> NSString? {
     let DirPath = DocPath.appendingPathComponent(path)
     if !Default_FileManager.fileExists(atPath: DirPath) {
-        if !isCreat {return nil}
+        if !isCreat {return DirPath as NSString}
         let done:()? = try? Default_FileManager.createDirectory(atPath: DirPath, withIntermediateDirectories: true, attributes: nil)
         if done == nil {
             print("\(DirPath)创建路径失败")
@@ -34,6 +39,7 @@ func saveToDocPath(_ data: Data, _ path: String) -> Bool {
     return done != nil
 }
 
+@discardableResult
 func cleanDocItem(_ path: String) -> Bool {
     let ItemPath = DocPath.appendingPathComponent(path)
     let done:()? = try? Default_FileManager.removeItem(atPath: ItemPath)

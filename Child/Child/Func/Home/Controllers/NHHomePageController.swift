@@ -8,14 +8,17 @@
 
 import UIKit
 import YNDropDownMenu
-class NHHomePageController: NHViewController {
+
+class NHHomePageController: NHViewController,NHDropDownDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headView: UIView!
     
+    var lists = [String]()
+    
     var location:BMKLocation?
     var dropMenu:YNDropDownMenu?
-    let dropModels:[NHDropDownModel] = {
+    let dropDownViews:[DropRootView] = {
         var ruleData:Array = [
             (("",0),[
                 CellElement.init("推荐", code: 1, parentCode: -1, isSelected:true),
@@ -24,17 +27,13 @@ class NHHomePageController: NHViewController {
         ]
         var ruleModel:NHDropDownModel = NHDropDownModel.init(ruleData, NHDropDownStyle.rule, NHDropSelectStyle.single, dropCellHeight * 2)
         
+        
+        var cityCells = [CellElement]()
+        var districtCells = [CellElement]()
+        
         var areaData:Array = [
-            (("city",0),[
-                CellElement.init("北京市", code: 1, parentCode: -1, isSelected:true),
-                CellElement.init("上海市", code: 2, parentCode: -1)
-                ]),
-            (("district",0),[
-                CellElement.init("昌平区", code: 1, parentCode: 1, isSelected:true),
-                CellElement.init("海淀区", code: 2, parentCode: 1),
-                CellElement.init("尖沙咀区", code: 1, parentCode: 2),
-                CellElement.init("浦东区", code: 2, parentCode: 2)
-                ])
+            (("city",0),cityCells),
+            (("district",0),districtCells)
         ]
         var AreaModel:NHDropDownModel = NHDropDownModel(areaData, NHDropDownStyle.area, NHDropSelectStyle.single, dropCellHeight * 5 + 66)
         var featuresData:Array = [
@@ -52,41 +51,87 @@ class NHHomePageController: NHViewController {
                 ])
         ]
         var FeaturesModel:NHDropDownModel = NHDropDownModel(featuresData, NHDropDownStyle.feature, NHDropSelectStyle.single, dropCellHeight * 5 + 34)
-        var array:Array = [ruleModel,AreaModel,FeaturesModel]
+        var array:Array = [
+            DropRootView.getDropView(model: ruleModel, delegate: nil),
+            DropRootView.getDropView(model: AreaModel, delegate: nil),
+            DropRootView.getDropView(model: FeaturesModel, delegate: nil)]
         return array
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.creatUI()
+        self.addNofication()
+
         // Do any additional setup after loading the view.
-    }
+    }    
     
     private func creatUI() {
         self.title = "大厅"
-        NHLocationManager.shareManager.startlocation { (location) in
-            self.location = location
-            if self.dropMenu != nil {
-                self.dropMenu?.changeMenu(title: location?.rgcData?.city ?? "地区", at: 1)
-            }
-        }
         self.prepareTableView()
         self.prepareHeadView()
         
-        let leftItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(didClickBack(_:)))
-        let rightItem = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(didClickBack(_:)))
+        let leftItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(didClickLeft(_:)))
+        let rightItem = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(didClickRight(_:)))
         
         self.navigationItem.leftBarButtonItem = leftItem
         self.navigationItem.rightBarButtonItem = rightItem
     }
 
-    @objc private func didClickBack(_ btn:UIButton) {
-        NHLocationManager.shareManager.startlocation { (location) in
-            self.location = location
-            if self.dropMenu != nil {
-                self.dropMenu?.changeMenu(title: location?.rgcData?.city ?? "地区", at: 1)
-            }
+    @objc private func didClickLeft(_ item:UIBarButtonItem) {
+        //date -> string
+        let myFormatter = DateFormatter()
+        //这里有很多默认的日期格式
+        myFormatter.dateStyle = .long
+        //默认的时间格式
+        myFormatter.timeStyle = .long
+        let string = myFormatter.string(from: Date.init(timeIntervalSinceNow: 0))
+        
+        NHAlertView.actionShow("发送消息","2,1,"+string, [("取消",.default,{(action) in }),("确定",.default,{(action) in
+            var message = LMessage()
+            message.data = string.data(using: .utf8)
+            LinkManager.shareManager.sendMessage(message)
+        })]
+        )
+    }
+    @objc private func didClickRight(_ item:UIBarButtonItem) {
+        if item.tag == 101 {
+            item.tag = 100
+            LinkManager.shareManager.Register()
+            self.title = "已链接"
+        } else {
+            item.tag = 101
+            LinkManager.shareManager.Logout()
+            self.title = "断开链接"
         }
+    }
+    
+    private func addNofication () {
+        
+        NotificationCenter.default.addObserver(
+            forName: NHNotifyName.AreaUpdated,
+            object: nil, queue: OperationQueue.main, using: { (notification) in
+                self.resetAreaView()
+        })
+        NotificationCenter.default.addObserver(
+            forName: NHNotifyName.ReceiveMessage,
+            object: nil, queue: OperationQueue.main, using: { (notification) in
+                
+                self.lists.append(notification.object as? String ?? "11" )
+                self.tableView.reloadData()
+        })
+    }
+    
+    func resetAreaView() {
+        if UnEmptyArray(self.dropDownViews) {
+            let areaView = self.dropDownViews[1] as! NHAreaView
+            areaView.resetAll()
+        }
+    }
+    
+    deinit {
+        //记得移除通知监听
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,53 +166,28 @@ extension NHHomePageController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return lists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
-        cell.textLabel?.text = "index row is \(indexPath.row)"
+        cell.textLabel?.text = "receive \(lists[indexPath.row])"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NHNet.share.GET(parameters: ["":""]) { (code, result) in
-            
-        }
+        
+
     }
     
 }
 
 //MARK: HeadView
-extension NHHomePageController:NHDropDownDelegate, NHProvinceDelegate {
+extension NHHomePageController:NHProvinceDelegate {
     func didSelectProvince(model: CellElement) {
-        
-        
-        var elements = self.dropModels[1].dataArray[0].1
-        if model.code == 0 {
-            elements[0].isSelected = true
-            elements[1].isSelected = false
-        } else {
-            elements[0].isSelected = false
-            elements[1].isSelected = true
-        }
-        var areaData:Array = [
-            (("city",0),[
-                CellElement.init("海南市", code: 1, parentCode: -1, isSelected:true),
-                CellElement.init("福建市", code: 2, parentCode: -1)
-                ]),
-            (("district",0),[
-                CellElement.init("昌平区", code: 1, parentCode: 1, isSelected:true),
-                CellElement.init("海淀区", code: 2, parentCode: 1),
-                CellElement.init("尖沙咀区", code: 1, parentCode: 2),
-                CellElement.init("浦东区", code: 2, parentCode: 2)
-                ])
-        ]
-        var model:NHDropDownModel = dropModels[1]
-        model.dataArray = areaData
-        self.dropMenu?.changeView(view: DropRootView.getDropView(model: model, delegate: self), at: 1)
-
-        didSelectItem(model: model)
+        SystemPreferences().set(String.init(format: "%d", model.code) , forKey: Constants.NOW_PROVINCE_CODE)
+        resetAreaView()
+        didSelectItem(model: dropDownViews[1].model)
     }
     
     func didSelectItem(model: NHDropDownModel) {
@@ -209,17 +229,10 @@ extension NHHomePageController:NHDropDownDelegate, NHProvinceDelegate {
     
     func prepareHeadView() {
         
-        let ZBdropDownViews:[DropRootView] = {
-            
-            var array = Array<DropRootView>()
-            
-            dropModels.forEach({ (model) in
-                array .append(DropRootView.getDropView(model: model, delegate: self))
-            })
-            return array
-        }()
-        
-        let dropMenu = YNDropDownMenu(frame: self.headView.frame, dropDownViews:ZBdropDownViews, dropDownViewTitles: ["推荐", self.location?.rgcData?.city ?? "地区", "要求"])
+        self.dropDownViews.forEach({ (view) in
+            view.dropDelegate = self
+        })
+        let dropMenu = YNDropDownMenu(frame: CGRect.init(origin: CGPoint.init(x: self.headView.frame.origin.x, y: kNavigationH), size: self.headView.bounds.size), dropDownViews:self.dropDownViews, dropDownViewTitles: ["推荐", self.location?.rgcData?.city ?? "地区", "要求"])
         dropMenu.setImageWhen(normal: UIImage(named: "arrow_down"), selected: UIImage(named: "arrow_down"), disabled: UIImage(named: "arrow_down"))
         dropMenu.setLabelColorWhen(normal: NHColor.grayColor, selected: NHColor.mainColor, disabled: NHColor.lightColor)
         dropMenu.setLabelFontWhen(normal: NHFont.normalFont, selected: NHFont.normalFont, disabled: NHFont.normalFont)
@@ -233,6 +246,7 @@ extension NHHomePageController:NHDropDownDelegate, NHProvinceDelegate {
         
         self.dropMenu = dropMenu
         view.addSubview(dropMenu)
+        
     }
     
 }

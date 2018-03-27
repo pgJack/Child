@@ -12,7 +12,7 @@ import YNDropDownMenu
 class DropRootView: YNDropDownView {
     open var model: NHDropDownModel!
     open weak var dropDelegate: NHDropDownDelegate?
-    class func getDropView(model:NHDropDownModel, delegate:NHDropDownDelegate) -> DropRootView {
+    class func getDropView(model:NHDropDownModel, delegate:NHDropDownDelegate?) -> DropRootView {
         
         var dropView:DropRootView?
         
@@ -68,11 +68,11 @@ class NHSortRuleView: DropRootView,UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         
         var elements = model.dataArray[0].1
-        for i in 1...elements.count {
-            if Unmanaged.passUnretained(elements[i - 1]).toOpaque() == Unmanaged.passUnretained(elements[indexPath.row]).toOpaque() {
-                elements[i - 1].isSelected = true
+        for i in 0..<elements.count {
+            if Unmanaged.passUnretained(elements[i]).toOpaque() == Unmanaged.passUnretained(elements[indexPath.row]).toOpaque() {
+                elements[i].isSelected = true
             } else {
-                elements[i - 1].isSelected = false
+                elements[i].isSelected = false
             }
         }
         tableView.reloadData()
@@ -94,7 +94,6 @@ class NHAreaView: DropRootView,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var leftTableView: UITableView!
     let leftCellID:String = "left_area_cell"
     let rightCellID:String = "right_area_cell"
-    var rightElementsShow:Array = [CellElement]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -118,7 +117,7 @@ class NHAreaView: DropRootView,UITableViewDelegate,UITableViewDataSource {
         if tableView == leftTableView {
             return model.dataArray[0].1.count
         } else {
-            return rightElementsShow.count
+            return model.dataArray[1].1.count
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -133,7 +132,7 @@ class NHAreaView: DropRootView,UITableViewDelegate,UITableViewDataSource {
             }
             return cell
         } else {
-            let element = rightElementsShow[indexPath.row]
+            let element = model.dataArray[1].1[indexPath.row]
             let cell = DropCell.getCell(tableView, element)
             return cell
         }
@@ -151,8 +150,8 @@ class NHAreaView: DropRootView,UITableViewDelegate,UITableViewDataSource {
     func selectLeftCell(index:Int) {
         var leftElements = model.dataArray[0].1
         if leftElements[index].isSelected {return}
-        for i in 1...leftElements.count {
-            leftElements[i - 1].isSelected = false
+        for i in 0..<leftElements.count {
+            leftElements[i].isSelected = false
         }
         leftElements[index].isSelected = true
         leftTableView.reloadData()
@@ -160,18 +159,18 @@ class NHAreaView: DropRootView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func selectRightCell(index:Int) {
-        if rightElementsShow[index].isSelected {return}
+        if model.dataArray[1].1[index].isSelected {return}
         var rightElements = model.dataArray[1].1
-        for i in 1...rightElements.count {
-            rightElements[i - 1].isSelected = false
+        for i in 0..<rightElements.count {
+            rightElements[i].isSelected = false
         }
-        rightElementsShow[index].isSelected = true
+        model.dataArray[1].1[index].isSelected = true
         rightTableView.reloadData()
     }
     
     func resetRightTable() {
         let leftElements = model.dataArray[0].1
-        var rightElements = model.dataArray[1].1
+        var rightElements = [CellElement]()
         var parentCode:Int?
         for element in leftElements {
             if element.isSelected {
@@ -179,24 +178,36 @@ class NHAreaView: DropRootView,UITableViewDelegate,UITableViewDataSource {
                 break
             }
         }
-        rightElementsShow.removeAll()
-        for i in 1...rightElements.count {
-            let element = rightElements[i - 1]
-            element.isSelected = false
-            if element.parentCode == parentCode {
-                rightElementsShow.append(element)
+        if parentCode != nil {
+            let towns = AreaManager.share.nowTowns(cityCode: String.init(format: "%d", parentCode!))
+            if UnEmptyArray(towns) {
+                rightElements.append(CellElement.init(towns![0].name, code: Int(towns![0].code), parentCode: Int(towns![0].parentCode)!))
+                for i in 1..<towns!.count {
+                    rightElements.append(CellElement.init(towns![i].name, code: Int(towns![i].code), parentCode: Int(towns![i].parentCode)!))
+                }
             }
         }
-        if rightElementsShow.count > 0 {
+        model.dataArray[1].1 = rightElements
+        if rightElements.count > 0 {
             selectRightCell(index: 0)
+        } else {
+            rightTableView.reloadData()
         }
     }
     
     func resetAll() {
-        var leftElements = model.dataArray[0].1
-        for i in 1...leftElements.count {
-            leftElements[i - 1].isSelected = leftElements[i - 1].isDefaultSelected
+        var leftElements = [CellElement]()
+        let citys = AreaManager.share.nowCitys()
+        
+        citys?.forEach({ (city) in
+            leftElements.append(CellElement.init(city.name, code: Int(city.code), parentCode: Int(city.parentCode)!))
+            
+        })
+        if UnEmptyArray(leftElements) {
+            leftElements[0].isSelected = true;
+            leftElements[0].isDefaultSelected = true
         }
+        model.dataArray[0].1 = leftElements
         leftTableView.reloadData()
         resetRightTable()
     }

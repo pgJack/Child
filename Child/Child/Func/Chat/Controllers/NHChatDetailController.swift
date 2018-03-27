@@ -1,16 +1,21 @@
 //
-//  NHTabBarController.swift
+//  NHChatDetailController.swift
 //  Child
 //
-//  Created by Noah on 2018/2/24.
+//  Created by Noah on 2018/3/27.
 //  Copyright © 2018年 NH. All rights reserved.
 //
 
 import UIKit
+import SnapKit
+import RxSwift
 
+private let kChatLoadMoreOffset: CGFloat = 30
 
-class NHTabBarController: UITabBarController {
+class NHChatDetailController: NHViewController {
 
+    var messageModel: NHChat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

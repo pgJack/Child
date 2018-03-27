@@ -9,12 +9,12 @@
 import UIKit
 
 //页面
-let kSCREEN_WIDTH = UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height ? Double(UIScreen.main.bounds.size.height): Double(UIScreen.main.bounds.size.width)
-let kSCREEN_HEIGHT = UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height ? Double(UIScreen.main.bounds.size.height): Double(UIScreen.main.bounds.size.width)
+let kSCREEN_WIDTH = UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height ? CGFloat(UIScreen.main.bounds.size.height): CGFloat(UIScreen.main.bounds.size.width)
+let kSCREEN_HEIGHT = UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height ? CGFloat(UIScreen.main.bounds.size.height): CGFloat(UIScreen.main.bounds.size.width)
 let IS_IPHONE_X = kSCREEN_HEIGHT == 812.0
-let kNavigationH = IS_IPHONE_X ? 88.0 : 64.0
-let kTabBarHeight = IS_IPHONE_X ? 83.0 : 49.0
-let BottomHeight = IS_IPHONE_X ? 34.0 : 0.0
+let kNavigationH = CGFloat(IS_IPHONE_X ? 88.0 : 64.0)
+let kTabBarHeight = CGFloat(IS_IPHONE_X ? 83.0 : 49.0)
+let BottomHeight = CGFloat(IS_IPHONE_X ? 34.0 : 0.0)
 
 //APP信息
 struct NHAPP {
@@ -108,13 +108,16 @@ struct NHDevice {
 
 //获取设备唯一标识
 let GetUDID:String = {
-    let udidPath = DocPath.appendingPathComponent("UDID")
-    var udid:String? = NSKeyedUnarchiver.unarchiveObject(withFile: udidPath) as? String;
-    if udid == nil || udid == "null" {
-        udid = UIDevice.current.identifierForVendor?.uuidString ?? "null"
-        NSKeyedArchiver.archiveRootObject(udid!, toFile: udidPath);
+    let keychain = KeychainSwift()
+    let kKeychainUDID = "Noah.Smart.Child.com.UDID"
+    if let value = keychain.get(kKeychainUDID) {
+        return value
+    } else {
+        let UDID:String = (UIDevice.current.identifierForVendor?.uuidString)!
+        keychain.synchronizable = false
+        keychain.set(UDID, forKey: kKeychainUDID)
+        return UDID
     }
-    return udid ?? "null"
 }()
 
 func GetGUID() -> String! {
@@ -146,6 +149,22 @@ func GetIPAddresses() -> String? {
     return addresses.first
 }
 
+struct NHNotifyName {
+    static let AreaUpdated = NSNotification.Name(rawValue: "notify_area_updated")
+    static let ReceiveMessage = NSNotification.Name(rawValue: "notify_receive_message")
+}
+
 struct Constants {
+    static let USER_ID = "constants_user_id"
+    static let USER_NAME = "constants_user_name"
+    static let USER_PHONE = "constants_user_phone"
+    static let DB_VERSION = "constants_db_version"
     
+    static let NOW_PROVINCE_CODE = "constants_now_province_code"
+}
+
+struct NHTableName {
+    static let VersionTable = "nh_version_table"
+    static let V_AreaTable = "nh_area_table"
+    static let UserTable = "nh_user_table"
 }

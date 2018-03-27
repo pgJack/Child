@@ -1,28 +1,40 @@
 //
-//  DropProvinceController.swift
+//  NHChatController.swift
 //  Child
 //
-//  Created by Noah on 2018/3/6.
+//  Created by Noah on 2018/3/8.
 //  Copyright © 2018年 NH. All rights reserved.
 //
 
 import UIKit
-public protocol NHProvinceDelegate: class {
-    func didSelectProvince(model:CellElement)
-}
+import TimedSilver
 
-class DropProvinceController: NHTableViewController {
+class NHChatController: NHTableViewController {
 
-    open weak var proDelegate: NHProvinceDelegate?
+    var messages = [NHChat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.title = "消息"
+        tableView.estimatedRowHeight = 65
+        tableView.ts_registerCellNib(NHChatCell.self)
+        tableView.tableFooterView = UIView()
+        for i in 0..<6 {
+            let chat = NHChat()
+            chat.username = "Annatar"
+            chat.userid = "\(i)"
+            chat.usericon = "default_icon"
+            chat.unreadnum = i
+            var lastMessage = LMessage()
+            lastMessage.data = "hello_word".data(using: .utf8)
+            lastMessage.date = Date()
+            lastMessage.type = .Word
+            
+            chat.lastmessage = lastMessage
+            
+            messages.append(chat)
+        }
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,34 +51,28 @@ class DropProvinceController: NHTableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return AreaManager.share.provinces?.count ?? 0
+        return messages.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.estimatedRowHeight
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let province = AreaManager.share.provinces![indexPath.row]
-        let element = CellElement(province.0, code: Int(province.1), parentCode: Int(province.2)!, isSelected: false)
-        if IsEquelString(province.code, AreaManager.share.nowProvinceCode()) {
-            element.isSelected = true
-        }
-        return DropCell.getCell(tableView, element)
+        let cell: NHChatCell = tableView.ts_dequeueReusableCell(NHChatCell.self)
+        cell.setCellContnet(self.messages[indexPath.row])
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell:DropCell = tableView.cellForRow(at: indexPath) as! DropCell
-        proDelegate?.didSelectProvince(model: cell.model)
-        
-        navigationController?.popViewController(animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -76,7 +82,6 @@ class DropProvinceController: NHTableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

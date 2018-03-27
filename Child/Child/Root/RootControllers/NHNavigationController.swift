@@ -10,9 +10,18 @@ import UIKit
 
 class NHNavigationController: UINavigationController {
 
+    var alphaView:UIView?
+    func NoColorNav() {
+        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    }
+    func ColorNav() {
+        navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationBar.shadowImage = UIImage()
+        alphaView = navigationBar.subviews.first
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +30,14 @@ class NHNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if viewControllers.count != 0 {
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        super .pushViewController(viewController, animated: animated)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -10,12 +10,15 @@ import UIKit
 
 class NHAlertView: NSObject {
 
+    class func noticeShow(_ message:String) {
+        simpleShow("提示", message, "确定")
+    }
+    
     class func simpleShow(_ title:String,_ message:String,_ buttonName:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let tempAction = UIAlertAction(title: buttonName, style: .cancel) { (action) in
-        }
-        alert.addAction(tempAction)
-        AppDelegate.nowShowController().present(alert, animated: true, completion: nil)
+        
+        actionShow(title, message, [(title: buttonName, style: .cancel, { (action) in
+            })])
+        
     }
     class func actionShow(_ title:String, _ message:String, _ actions:[(String, UIAlertActionStyle,((UIAlertAction) -> Swift.Void)?)]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
